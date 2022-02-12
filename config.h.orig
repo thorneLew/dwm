@@ -9,6 +9,7 @@ static const unsigned int gappoh    = 10;       /* horiz outer gap between windo
 static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
+static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Source Code Pro:size=12" };
 static const char dmenufont[]       = "monospace:size=12";
