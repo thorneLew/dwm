@@ -10,7 +10,7 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const int topbar             = 0;        /* 0 means bottom bar */
+static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Source Code Pro:size=14" };
 static const char dmenufont[]       = "monospace:size=14";
 static const char col_gray1[]       = "#222222";
@@ -19,13 +19,14 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const char col_red[]        = "#ef3473";
+static const char col_cheng[]     = "#ff780d";
 static const char col_putaozi[]        = "#302f4b";
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_putaozi,  col_red },
+	[SchemeSel]  = { col_gray4, col_putaozi,  col_cheng },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -92,10 +93,12 @@ static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *trayercmd[] = { "/home/thone/.dwm/scripts/ty-toggle.sh", NULL };
+static const char *roficmd[]  = { "rofi", "-show", "drun", "-theme", "/home/thone/.config/rofi/launchers/type-1/style-1.rasi", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_z,      spawn,          {.v = roficmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_t, 	   spawn,          {.v = trayercmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
